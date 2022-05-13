@@ -15,7 +15,7 @@ export default function Home({ posts }) {
               <p className="mb-2 text-xl text-justify text-white">
                 I&apos;m a full-stack developer living in Costa Rica, with a great passion for programming and design. 
                 With experience in many tools and technologies such as Python, JavsScript, React, PHP, 
-                WordPress, and many more.
+                WordPress, and more.
               </p>
               <p className="mb-2 text-xl text-justify text-white">
                 I&apos;m also a coffee lover, eager to take on new challenges and work on amazing projects.
