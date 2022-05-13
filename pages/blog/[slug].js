@@ -8,7 +8,7 @@ export async function getStaticPaths() {
     // Get the slugs
     const paths = files.map((fileName) => ({
         params: {
-          slug: fileName.replace('.md', ''),
+          slug: fileName.replace('.mdx', ''),
         }
     }));
 
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-    const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8');
+    const fileName = fs.readFileSync(`posts/${slug}.mdx`, 'utf-8');
     const { data: frontmatter, content } = matter(fileName);
     return {
         props: {
@@ -31,9 +31,8 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function postpage({ frontmatter, content }) {
     return (
-        <div className=' mx-auto'>
-            <h1>{frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-        </div>
+        <article className='post prose lg:prose-xl p-4'>
+            <div className='content' dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        </article>
     )
 }
