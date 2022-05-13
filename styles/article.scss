@@ -1,0 +1,26 @@
+article.post{
+    .content{
+        h1, h2, h3 {
+            color: $white;
+        }
+
+        p, a, li{
+            color: $post-text !important;
+        }
+
+        table{
+            background-color: #1e293b;
+            thead {
+                th{
+                    color: $white;
+                    padding: 12px;
+                }
+            }
+
+            td{
+                color: $post-text;
+                padding: 12px;
+            }
+        }
+    }
+}
