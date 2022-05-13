@@ -1,10 +1,14 @@
+import Link from 'next/link'
+
 export default function Header() {
     return (
         <header className="mb-8 py-4 bg-blue-500"> 
             <div className="container mx-auto flex-1">
                 <nav className="flex sm:justify-left space-x-4 px-6">
                     <div className="flex items-center flex-shrink-0 text-white mr-6">
-                        <a href="/" className="font-bold">Jorge Araya</a>
+                        <Link href="/">
+                            <a className="font-bold">Jorge Araya</a>
+                        </Link>
                     </div>
                     {/*[
                         ['Blog', '/blog'],
