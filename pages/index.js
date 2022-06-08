@@ -24,7 +24,7 @@ export default function Home({ posts }) {
             <div className="p-2 flex items-center justify-center">
               <figure className="pf-picture">
                 <img
-                  src="/images/jorge-armoji.png"
+                  src="/images/profile-jorge-araya.png"
                   className="rounded-full mx-auto md:max-w-xs"
                 ></img>
               </figure>
