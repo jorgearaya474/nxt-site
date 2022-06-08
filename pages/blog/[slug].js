@@ -46,7 +46,7 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function postpage({ frontmatter, content, posts }) {
     return (
-        <div class="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4">
             <div className='col-span-2'>
                 <article className='post prose lg:prose-xl p-4'>
                     <div className='content' dangerouslySetInnerHTML={{ __html: md().render(content) }} />
