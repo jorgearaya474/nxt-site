@@ -1,7 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 mt-8 py-6">
-      
+    <footer className="mt-8 py-6">
       <div className="container mx-auto flex justify-center text-white">
           <a href="https://github.com/jorgearaya474" title="Github">
             <img className="w-6 m-3 opacity-60 hover:opacity-100" src="/images/github-icon.svg" />
@@ -14,7 +13,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="container mx-auto flex justify-center text-white">
-          <p className="font-light text-slate-500">&copy; {`${new Date().getFullYear()} - made with ☕ by Jorge Araya`}</p>
+          <p className="font-light text-stone-500">&copy; {`${new Date().getFullYear()} - made with ☕ by Jorge Araya`}</p>
         </div>
     </footer>
   );

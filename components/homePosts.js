@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function HomePosts(props) {
   return (
-    <div id="posts-list" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+    <div id="posts-list" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {props.posts.map(({ slug, frontmatter }) => (
-        <div key={slug} className="p-2 post-box">
-            <div className="bg-slate-800 rounded-xl shadow-lg overflow-hidden flex flex-col hover:bg-slate-700 transition duration-300 ease-in-out">
+        <div key={slug} className="post-box">
+            <div className="bg-stone-800 rounded-xl shadow-lg overflow-hidden flex flex-col hover:bg-emerald-700 transition duration-300 ease-in-out">
             <Link href={`/blog/${slug}`}>
             <a>
               <Image
