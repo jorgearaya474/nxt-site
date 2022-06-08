@@ -1,6 +1,5 @@
 body{
-    background: rgb(15,23,42);
-    background: linear-gradient(0deg, $bk-darker 0%, $bk-dark 100%);
+    background: $bk-dark;
     font-family: 'Source Sans Pro', sans-serif;
 
     #nxt_site{
@@ -13,7 +12,6 @@ body{
                 }
         
                 .pf-picture img{
-                    border: 5px solid $accent-1;
                     background-color: rgba($white, 0.06);
     
                     @media screen and (max-width: 768px) {
@@ -34,5 +32,9 @@ body{
                 }
             }
         }
+    }
+
+    footer{
+        background-color: $bk-darker;
     }
 }
