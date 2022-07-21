@@ -48,7 +48,7 @@ export default function Home({ posts }) {
                         <animateTransform
                           attributeName="transform"
                           begin="0s"
-                          dur="400s"
+                          dur="350s"
                           type="rotate"
                           from="0 150 150"
                           to="360 150 150"
@@ -63,7 +63,7 @@ export default function Home({ posts }) {
                         <animateTransform
                           attributeName="transform"
                           begin="0s"
-                          dur="400s"
+                          dur="300s"
                           type="rotate"
                           from="360 150 150"
                           to="0 150 150"
@@ -83,7 +83,7 @@ export default function Home({ posts }) {
                         <tspan className="tseparator"> &nbsp;&frasl;&frasl;&nbsp; </tspan>
                         print(<tspan className="tstext">&quot;Hello World&quot;</tspan>)
                         <tspan className="tseparator"> &nbsp;&frasl;&frasl;&nbsp; </tspan>
-                        System.out.println(
+                        System.out.print(
                         <tspan className="tstext">&quot;Hello World&quot;</tspan>);
                       </textPath>
                     </text>
