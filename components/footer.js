@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-8 py-6">
+    <footer className="py-6 bg-neutral-900">
       <div className="container mx-auto flex justify-center text-white">
           <a href="https://github.com/jorgearaya474" title="Github">
             <img className="w-6 m-3 opacity-60 hover:opacity-100" src="/images/github-icon.svg" />
