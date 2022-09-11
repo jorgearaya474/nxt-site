@@ -29,7 +29,7 @@ export default function Header() {
             ))}
             <Link href="mailto:jorgearaya474@gmail.com">
               <a className="mr-0 ml-auto rounded-full px-3 py-2 font-bold text-lg text-emerald-500 border-2 border-emerald-500 hover:border-amber-500 hover:text-amber-500 transition ease-in-out duration-150">
-                Say Hello <Smile size={19} className="inline-block hidden md:block" />
+                Say Hello <Smile size={19} className="inline-block hidden md:inline" />
               </a>
             </Link>
           </ul>
