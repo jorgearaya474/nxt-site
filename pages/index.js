@@ -8,14 +8,14 @@ export default function Home() {
     <div className="content">
       <div id="section_intro" className="flex justify-center items-center">
         <div className="container">
-          <div className="grid grid-cols-3 p-5">
+          <div className="grid grid-cols-3 p-8 md:p-5">
             <div className="col-span-3 md:col-span-2 order-2">
               <span className="text-3xl mb-3 text-amber-50 leading-10 md:leading-normal">
                 Hi 👋🏻, I&apos;m
               </span>
-                <h1 className="text-emerald-500 text-6xl md:text-8xl block mt-1 font-black uppercase tracking-tighter text-left">
-                  Jorge Araya
-                </h1>
+              <h1 className="text-emerald-500 text-5xl md:text-8xl block mt-1 font-black uppercase tracking-tighter text-left">
+                Jorge Araya
+              </h1>
               <p className="mb-2 text-2xl text-amber-50 text-left">
                 I&apos;m a full-stack web developer from 🇨🇷
               </p>
@@ -38,17 +38,16 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-3 md:col-span-1 order-1 md:order-2 mb-7">
-            <SVGComponent id="code_animation" className="relative mx-auto"/>
+              <SVGComponent id="code_animation" className="relative mx-auto" />
+            </div>
           </div>
-          </div>
-          
         </div>
       </div>
       <div
         id="section_about"
         className="flex justify-center items-center h-full md:h-screen py-14 bg-neutral-800"
       >
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-4 p-8 md:p-5">
           <div className="col-span-2">
             <h2 className="text-amber-50 font-bold text-3xl mb-3">About me</h2>
             <p className="text-amber-50 text-xl mb-2 leading-6">
