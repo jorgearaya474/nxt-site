@@ -19,7 +19,7 @@ export default function Header() {
             ].map(([title, url]) => (
               <Link key={title} href={url}>
                 <a
-                  className={`rounded-full px-3 py-2 font-bold text-lg text-amber-50 hover:bg-neutral-800 hover:text-emerald-500 ${
+                  className={`rounded-full px-2 md:px-3 py-2 font-bold text-lg text-amber-50 hover:bg-neutral-800 hover:text-emerald-500 ${
                     router.asPath == url ? "text-amber-500" : ""
                   }`}
                 >
