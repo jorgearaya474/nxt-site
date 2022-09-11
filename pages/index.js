@@ -1,142 +1,81 @@
-import fs from "fs";
-import matter from "gray-matter";
-import HomePosts from "../components/homePosts";
+import Link from "next/link";
+import { Linkedin, GitHub, Send } from "react-feather";
+import Image from "next/image";
+import SVGComponent from "../components/animation";
 
-export default function Home({ posts }) {
+export default function Home() {
   return (
-    <div className="home">
-      <div className="content">
-        <div className="p-4 mb-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 p-4">
-            <div className="py-8 info-txt order-last md:order-first">
-              <h1 className="font-bold mb-3 text-white leading-10 md:leading-normal">
-                Hi 👋🏻, I&apos;m Jorge Araya!
+    <div className="content">
+      <div id="section_intro" className="flex justify-center items-center">
+        <div className="container">
+          <div className="grid grid-cols-3 p-8 md:p-5">
+            <div className="col-span-3 md:col-span-2 order-2">
+              <span className="text-3xl mb-3 text-amber-50 leading-10 md:leading-normal">
+                Hi 👋🏻, I&apos;m
+              </span>
+              <h1 className="text-emerald-500 text-5xl md:text-8xl block mt-1 font-black uppercase tracking-tighter text-left">
+                Jorge Araya
               </h1>
-              <p className="mb-2 text-xl text-justify text-white">
-                I&apos;m a full-stack developer living in Costa Rica, with a
-                great passion for programming and design. With experience in
-                many tools and technologies such as Python, JavsScript, React,
-                PHP, WordPress, and more.
+              <p className="mb-2 text-2xl text-amber-50 text-left">
+                I&apos;m a full-stack web developer from 🇨🇷
               </p>
-              <p className="mb-2 text-xl text-justify text-white">
-                I&apos;m also a coffee lover, eager to take on new challenges
-                and work on amazing projects.
-              </p>
-            </div>
-            <div className="p-2 flex items-center justify-center">
-              <div className="pf-picture relative">
-                <img
-                  src="/images/profile-02.png"
-                  className="rounded-full mx-auto md:max-w-xs"
-                ></img>
-
-                <div id="circle" className="absolute top-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    width="100%"
-                    height="100%"
-                    x="0"
-                    y="0"
-                    viewBox="0 0 300 300"
-                  >
-                    <defs>
-                      <path
-                        id="outer-circle"
-                        d="M15 150a135 135 0 01 270 0 135 135 0 01-270 0"
-                      >
-                        <animateTransform
-                          attributeName="transform"
-                          begin="0s"
-                          dur="400s"
-                          type="rotate"
-                          from="0 150 150"
-                          to="360 150 150"
-                          repeatCount="indefinite"
-                        ></animateTransform>
-                      </path>
-
-                      <path
-                        id="inner-circle"
-                        d="M40 150a110 110 0 01 220 0 110 110 0 01-220 0"
-                      >
-                        <animateTransform
-                          attributeName="transform"
-                          begin="0s"
-                          dur="400s"
-                          type="rotate"
-                          from="360 150 150"
-                          to="0 150 150"
-                          repeatCount="indefinite"
-                        ></animateTransform>
-                      </path>
-                    </defs>
-                    <circle cx="150" cy="150" r="150" fill="none"></circle>
-                    <use fill="none" xlinkHref="#outer-circle"></use>
-                    <text>
-                      <textPath xlinkHref="#outer-circle" fill="#fcd12878">
-                        <tspan className="tseparator"> &nbsp;&frasl;&frasl;&nbsp; </tspan>
-                        console.log(
-                        <tspan className="tstext">&quot;Hello World&quot;</tspan>);
-                        <tspan className="tseparator"> &nbsp;&frasl;&frasl;&nbsp; </tspan>
-                        echo <tspan className="tstext">&quot;Hello World&quot;</tspan>;
-                        <tspan className="tseparator"> &nbsp;&frasl;&frasl;&nbsp; </tspan>
-                        print(<tspan className="tstext">&quot;Hello World&quot;</tspan>)
-                        <tspan className="tseparator"> &nbsp;&frasl;&frasl;&nbsp; </tspan>
-                        System.out.println(
-                        <tspan className="tstext">&quot;Hello World&quot;</tspan>);
-                      </textPath>
-                    </text>
-                    <text>
-                      <textPath xlinkHref="#inner-circle" fill="#6d6d94">
-                        <tspan className="tseparator"> --- </tspan>
-                        background-color:{" "}
-                        <tspan className="tsval">#ffffff;</tspan>
-                        <tspan className="tseparator"> --- </tspan>
-                        width: <tspan className="tsval">100%;</tspan>
-                        <tspan className="tseparator"> --- </tspan>
-                        font-size: <tspan className="tsval">46px;</tspan>
-                        <tspan className="tseparator"> --- </tspan>
-                        padding: <tspan className="tsval">12px 14px;</tspan>
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
+              <div className="my-3 flex gap-2">
+                <Link href="mailto:jorgearaya474@gmail.com">
+                  <a className="px-3 py-2 font-bold text-black rounded-full bg-emerald-500 hover:bg-amber-500 transition ease-in-out duration-150">
+                    Contact me <Send size={19} className="inline-block" />
+                  </a>
+                </Link>
+                <Link href="https://www.linkedin.com/in/jorge-araya-25088a105">
+                  <a className="flex items-center justify-center px-3 py-2 font-bold text-black rounded-full bg-emerald-500 hover:bg-amber-500 transition ease-in-out duration-150">
+                    <Linkedin size={19} />
+                  </a>
+                </Link>
+                <Link href="https://github.com/jorgearaya474">
+                  <a className="flex items-center justify-center px-3 py-2 font-bold text-black rounded-full bg-emerald-500 hover:bg-amber-500 transition ease-in-out duration-150">
+                    <GitHub size={19} />
+                  </a>
+                </Link>
               </div>
+            </div>
+            <div className="col-span-3 md:col-span-1 order-1 md:order-2 mb-7">
+              <SVGComponent id="code_animation" className="relative mx-auto" />
             </div>
           </div>
         </div>
-        <div id="recent-posts" className="p-4 mb-5">
-          <div className="grid grid-cols-1 p-4">
-            <div>
-              <h2 className="font-bold mb-3 text-white">Recent Posts</h2>
-            </div>
-            <div className="flex items-center justify-center">
-              <HomePosts posts={posts} />
-            </div>
+      </div>
+      <div
+        id="section_about"
+        className="flex justify-center items-center h-full md:h-screen py-14 bg-neutral-800"
+      >
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-4 p-8 md:p-5">
+          <div className="col-span-2">
+            <h2 className="text-amber-50 font-bold text-3xl mb-3">About me</h2>
+            <p className="text-amber-50 text-xl mb-2 leading-6">
+              I&apos;m a full-stack developer from Costa Rica, with a great
+              passion for programming and design, eager to take on new
+              challenges and work on amazing projects.
+            </p>
+            <p className="text-amber-50 text-xl mb-2 leading-6">
+              With 7 years of experience in web development, I have worked with
+              many tools and technologies such as Python, JavaScript, React,
+              PHP, WordPress and more.
+            </p>
+            <p className="text-amber-50 text-xl mb-2 leading-6">
+              I am a coffee lover who enjoys nature and loves to travel, I also
+              like playing video games!
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/images/profile-02.png"
+              alt="Picture of the author"
+              width={300}
+              height={300}
+              className="p-3"
+            />
           </div>
         </div>
       </div>
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const files = fs.readdirSync("posts");
-
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace(".mdx", "");
-    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
-    const { data: frontmatter } = matter(readFile);
-    return {
-      slug,
-      frontmatter,
-    };
-  });
-
-  return {
-    props: {
-      posts,
-    },
-  };
 }

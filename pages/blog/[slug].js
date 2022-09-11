@@ -1,60 +1,76 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import md from 'markdown-it';
-import SidebarArticles from '../../components/sidebarArticles';
+import fs from "fs";
+import matter from "gray-matter";
+import md from "markdown-it";
+import { Calendar, Tag } from "react-feather";
 
 export async function getStaticPaths() {
-    // Get all posts
-    const files = fs.readdirSync('posts');
-    // Get the slugs
-    const paths = files.map((fileName) => ({
-        params: {
-          slug: fileName.replace('.mdx', ''),
-        }
-    }));
+  // Get all posts
+  const files = fs.readdirSync("posts");
+  // Get the slugs
+  const paths = files.map((fileName) => ({
+    params: {
+      slug: fileName.replace(".mdx", ""),
+    },
+  }));
 
-    return {
-        paths,
-        fallback: false,
-    }
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params: { slug } }) {
-    const fileName = fs.readFileSync(`posts/${slug}.mdx`, 'utf-8');
-    const { data: frontmatter, content } = matter(fileName);
+  const fileName = fs.readFileSync(`posts/${slug}.mdx`, "utf-8");
+  const { data: frontmatter, content } = matter(fileName);
 
-    // get post list
-    const postsFiles = fs.readdirSync("posts");
-    const posts = postsFiles.map((fileName) => {
-        const slug = fileName.replace(".mdx", "");
-        const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
-        const { data: frontmatter } = matter(readFile);
-        return {
-        slug,
-        frontmatter,
-        };
-    });
-
+  // get post list
+  const postsFiles = fs.readdirSync("posts");
+  const posts = postsFiles.map((fileName) => {
+    const slug = fileName.replace(".mdx", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
+    const { data: frontmatter } = matter(readFile);
     return {
-        props: {
-            frontmatter,
-            content,
-            posts
-        }
-    }
+      slug,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      frontmatter,
+      content,
+      posts,
+    },
+  };
 }
 
-export default function postpage({ frontmatter, content, posts }) {
-    return (
-        <div className="grid grid-cols-3 gap-4">
-            <div className='col-span-2'>
-                <article className='post prose lg:prose-xl p-4'>
-                    <div className='content' dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-                </article>
+export default function postpage({ frontmatter, content, posts, slug }) {
+  return (
+    <div className="flex justify-center items-center">
+      <div className="content">
+        <div className="container">
+          <div className="grid grid-cols-6 p-8 md:p-5 gap-6">
+            <div className="col-span-6 md:col-span-4 md:col-start-2">
+              <article className="post prose lg:prose-xl">
+                <div className="meta-data text-slate-400">
+                  <span className="mr-3">
+                    <Calendar className="inline-flex mb-1" size="18" />{" "}
+                    {frontmatter.date}
+                  </span>
+                  <span>
+                    <Tag className="inline-flex mb-1" size="18" />{" "}
+                    {frontmatter.tag}
+                  </span>
+                </div>
+                <div
+                  className="content"
+                  dangerouslySetInnerHTML={{ __html: md().render(content) }}
+                />
+              </article>
             </div>
-            <div>
-                <SidebarArticles posts={posts}/>
-            </div>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

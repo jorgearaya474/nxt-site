@@ -10,7 +10,7 @@ export default function SidebarArticles(props) {
                 <li key={slug} className="post-box">
                     <Link href={`/blog/${slug}`}>
                         <a className="block py-2 font-medium hover:text-slate-900 dark:text-stone-300 dark:hover:text-emerald-300">
-                            <h3>&#8250; {frontmatter.title}</h3>
+                            &#8250; {frontmatter.title}
                         </a>
                     </Link>
                 </li>
