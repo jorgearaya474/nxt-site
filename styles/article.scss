@@ -8,10 +8,14 @@ article.post{
 
         p, a, li{
             color: $post-text !important;
+            line-height: 26px;
+            font-size: 18px;
         }
 
         table{
             background-color: #1e293b;
+            font-size: 18px;
+            
             thead {
                 th{
                     color: $white;

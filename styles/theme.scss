@@ -1,69 +1,83 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
-    background: $bk-dark;
-    font-family: 'Source Sans Pro', sans-serif;
+    background-color: $bk-dark;
+    font-family: 'Raleway', sans-serif;
+    
 
     #nxt_site{
-        .home{
-            .content{
-                .info-txt{
-                    h1{
-                        font-size: 46px;
+        #section_intro{
+                height: calc(100vh - 76px);
+
+                #code_animation{
+
+
+                    #morph_bk {
+                        animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
                     }
-                }
-        
-                .pf-picture img{
-                    background: radial-gradient(closest-side, $grd-circle-1, $grd-circle-2);
-                    padding: 50px;
-                }
-        
-                #recent-posts{
-                    h2{
-                        font-size: 24px;
+
+                    #macbook {
+                        animation: macbook .7s linear;
+                        transition: all .7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                     }
-    
-                    #posts-list{
-                        img{
-                            object-fit: cover;
+
+                    #coder {
+                        animation: coder .8s linear;
+                        transform-origin: center center;
+                    }
+
+                    #coffee {
+                        animation: coffee 1s linear;
+                        transform-origin: 83% 80%;
+                    }
+
+                    #smoke {
+                        animation: smoke 3s infinite;
+                    }
+
+                    @keyframes macbook {
+                        0%{transform: translateY(300px)}
+                        50%{transform: translateY(10px)}
+                        100% {transform: translateY(0px)}
+                    }
+
+                    @keyframes coder {
+                        0%{transform: scale(0); opacity: 0}
+                        50%{transform: scale(1.2); opacity: 1}
+                        100% {transform: scale(1); opacity:1}
+                    }
+
+                    @keyframes coffee {
+                        0%{transform: scale(0); opacity: 0}
+                        50%{transform: scale(1.5); opacity: 1}
+                        100% {transform: scale(1); opacity:1}
+                    }
+
+                    @keyframes smoke {
+                        0%{transform: translateY(0px); opacity: 1;}
+                        50%{ opacity: .5;}
+                        100%{transform: translateY(-15px); opacity: 0;}
+                    }
+
+                    @keyframes morph {
+                        0% {
+                            border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
                         }
+                        100% {
+                            border-radius: 40% 60%;
+                        }
+                    }
+                    @keyframes spin {
+                        to {
+                            transform: rotate(1turn);
+                        }
+                    }
+
+                    @media screen and (max-width: 758px) {
+                        max-width: 70%;
                     }
                 }
             }
-        }
-    }
-
-    footer{
-        background-color: $bk-darker;
-    }
-}
-
-#circle { 
-    width: 100%; 
-    padding-bottom: 100%; 
-    overflow: hidden;
-
-    text { 
-        font-size: 15px; 
-        font-weight:normal; 
-        letter-spacing: 1.5px; 
-    }
-
-    svg { 
-        position: absolute; 
-        left: 0; 
-        top: 0; 
-        width: 100%; 
-        height: auto;
-
-        tspan{
-          &.tseparator{
-              fill: #b0b0b0;
-          }
-          &.tstext {
-              fill: #10b880b0;
-          }
-          &.tsval{
-              fill: #e7966f99;
-          }
-        }
     }
 }
