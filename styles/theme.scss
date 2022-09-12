@@ -7,6 +7,35 @@ body{
     
 
     #nxt_site{
+        header#site-header{
+            #header_title{
+                span{
+                    &::after{
+                        content:" _";
+                        opacity: 0;
+                        animation: cursor 1s infinite;
+                    }
+
+                    @keyframes cursor {
+                        0% {
+                            opacity: 0;
+                        }
+                        40% {
+                            opacity: 0;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                        90% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
         #section_intro{
                 height: calc(100vh - 76px);
 
