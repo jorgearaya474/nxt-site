@@ -17,7 +17,7 @@ export default function Home() {
                 Jorge Araya
               </h1>
               <p className="mb-2 text-2xl text-amber-50 text-left">
-                I&apos;m a full-stack web developer from 🇨🇷
+                A full-stack developer from Costa Rica 🇨🇷
               </p>
               <div className="my-3 flex gap-2">
                 <Link href="mailto:jorgearaya474@gmail.com">
@@ -50,19 +50,19 @@ export default function Home() {
         <div className="container grid grid-cols-1 md:grid-cols-3 gap-4 p-8 md:p-5">
           <div className="col-span-2">
             <h2 className="text-amber-50 font-bold text-3xl mb-3">About me</h2>
-            <p className="text-amber-50 text-xl mb-2 leading-6">
-              I&apos;m a full-stack developer from Costa Rica, with a great
+            <p className="text-amber-50 text-xl mb-2 leading-6 text-justify">
+              I&apos;m a full-stack developer from Costa Rica with a great
               passion for programming and design, eager to take on new
-              challenges and work on amazing projects.
+              challenges and work on cool projects.
             </p>
-            <p className="text-amber-50 text-xl mb-2 leading-6">
-              With 7 years of experience in web development, I have worked with
-              many tools and technologies such as Python, JavaScript, React,
-              PHP, WordPress and more.
+            <p className="text-amber-50 text-xl mb-2 leading-6 text-justify">
+              With more than six years of experience in web development, I have
+              worked with many tools and technologies such as Python,
+              JavaScript, React, PHP, WordPress, and more.
             </p>
-            <p className="text-amber-50 text-xl mb-2 leading-6">
-              I am a coffee lover who enjoys nature and loves to travel, I also
-              like playing video games!
+            <p className="text-amber-50 text-xl mb-2 leading-6 text-justify">
+              I spend my free time cooking, traveling, and hiking to discover
+              new places here in Costa Rica. I also love to play video games!
             </p>
           </div>
           <div className="flex items-center justify-center">
