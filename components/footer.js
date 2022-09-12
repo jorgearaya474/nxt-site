@@ -1,27 +1,20 @@
+import { Facebook, GitHub, Linkedin } from "react-feather";
+
 export default function Footer() {
   return (
     <footer className="py-6 bg-neutral-900">
-      <div className="container mx-auto flex justify-center text-white">
-        <a href="https://github.com/jorgearaya474" title="Github">
-          <img
-            className="w-6 m-3 opacity-60 hover:opacity-100"
-            src="/images/github-icon.svg"
-          />
+      <div className="container mx-auto flex justify-center text-white gap-3 mb-2">
+        <a href="https://github.com/jorgearaya474" title="Github" className="p-2 bg-neutral-700 rounded-full">
+          <GitHub size={20} className="text-neutral-400"/>
         </a>
         <a
           href="https://www.linkedin.com/in/jorge-araya-25088a105/"
-          title="LinkedIn"
+          title="LinkedIn" className="p-2 bg-neutral-700 rounded-full"
         >
-          <img
-            className="w-6 m-3 opacity-60 hover:opacity-100"
-            src="/images/linkedin-icon.svg"
-          />
+          <Linkedin size={20} className="text-neutral-400"/>
         </a>
-        <a href="https://www.facebook.com/jorgel.araya.50/" title="Facebook">
-          <img
-            className="w-6 m-3 opacity-60 hover:opacity-100"
-            src="/images/facebook-icon.svg"
-          />
+        <a href="https://www.facebook.com/jorgel.araya.50/" title="Facebook" className="p-2 bg-neutral-700 rounded-full">
+          <Facebook size={20} className="text-neutral-400"/>
         </a>
       </div>
       <div className="container mx-auto flex justify-center text-white">
