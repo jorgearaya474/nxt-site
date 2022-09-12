@@ -3,13 +3,28 @@ article.post{
     
     .content{
         h1, h2, h3 {
-            color: $white;
+            color: $post-text;
         }
 
-        p, a, li{
+        h1{
+            font-size: 45px;
+        }
+
+        p, a, li, i{
             color: $post-text !important;
             line-height: 26px;
             font-size: 18px;
+        }
+
+        p > code{
+            background: #4d4d4d;
+            color: #46dbad;
+            border-radius: 3px;
+            padding: 2px 4px;
+
+            &:before, &:after{
+                display: none;
+            }
         }
 
         table{
@@ -18,7 +33,7 @@ article.post{
             
             thead {
                 th{
-                    color: $white;
+                    color: $post-text;
                     padding: 12px;
                 }
             }
