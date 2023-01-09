@@ -1,12 +1,19 @@
 import Link from "next/link";
-import { Linkedin, GitHub, Send } from "react-feather";
+import { Linkedin, GitHub, Send, Facebook } from "react-feather";
 import Image from "next/image";
 import { NextPage } from "next";
+import DevIcon from "devicon-react-svg";
+
+const devIconStyle = {
+  fill: "#333",
+  width: "40px",
+  marginRight: "5px"
+};
 
 const Home: NextPage = () => {
   return (
     <div className="content">
-      
+
       <div id="section_intro" className="flex justify-center items-center">
         <div className="container">
           <div className="grid grid-cols-3 p-4 md:p-0">
@@ -23,7 +30,7 @@ const Home: NextPage = () => {
               <div className="my-3 flex gap-2">
                 <Link href="mailto:jorgearaya474@gmail.com">
                   <a className="px-3 py-2 font-bold text-black rounded-full bg-emerald-300 hover:bg-emerald-400 transition ease-in-out duration-150">
-                    Contact me <Send size={19} className="inline-block" />
+                    Get in touch <Send size={19} className="inline-block" />
                   </a>
                 </Link>
                 <Link href="https://www.linkedin.com/in/jorge-araya-25088a105">
@@ -42,36 +49,101 @@ const Home: NextPage = () => {
               <Image
                 src="/images/jorge-araya-profile-pic.png"
                 alt="Picture of the author"
-                width={300}
-                height={300}
+                width={400}
+                height={400}
                 className="rounded-md"
+                loading="lazy"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        id="section_about" className="flex justify-center items-center py-14">
-        <div className="container grid grid-cols-1 gap-4 p-8 md:p-5">
-          <div className="border-b-2 border-gray-200 pl-2 mb-4">
+        id="section_about" className="flex justify-center items-center bg-gray-100 py-14">
+        <div className="container grid grid-cols-1 p-8 md:p-0">
+          <div className="mb-5">
             <h2 className="text-black font-bold text-2xl">About</h2>
           </div>
-          <div className="col-span-2">
-            
-            <p className="text-black text-lg mb-2 leading-6 text-justify">
-              I&apos;m a full-stack developer from Costa Rica with a great
-              passion for programming and design, eager to take on new
-              challenges and work on cool projects.
-            </p>
-            <p className="text-black text-lg mb-2 leading-6 text-justify">
-              With more than six years of experience in web development, I have
-              worked with many tools and technologies such as Python,
-              JavaScript, React, PHP, WordPress, and more.
-            </p>
-            <p className="text-black text-lg mb-2 leading-6 text-justify">
-              I spend my free time cooking, traveling, and hiking to discover
-              new places here in Costa Rica. I also love to play video games!
-            </p>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-black text-lg mb-2 leading-6 text-justify">
+                I am a web developer with a passion for creating intuitive and engaging websites. I hail from the beautiful country of Costa Rica, where I have honed my skills in popular tools and technologies such as WordPress, React, Python, and PHP.
+              </p>
+              <p className="text-black text-lg mb-2 leading-6 text-justify">
+                I enjoy staying up to date with the latest web development trends and expanding my knowledge of programming languages. I am a hard-working and dedicated individual who is always eager to take on new challenges, and I am excited to see where my career as a developer takes me next.
+              </p>
+              <p className="text-black text-lg mb-2 leading-6 text-justify">
+                I like to spend my free time cooking, traveling and exploring new places here in Costa Rica. I also love playing video games!
+              </p>
+            </div>
+            <div>
+              <div className="bg-gray-200 p-5 rounded-md">
+                <h3 className="text-gray-500 text-xl font-bold">My Skills</h3>
+                <ul role="list" className="md:columns-3 space-y-3 text-slate-400 mt-4">
+                  {[
+                    ["React", "react"],
+                    ["PHP", "php"],
+                    ["WordPress", "wordpress"],
+                    ["Python", "python"],
+                    ["Sass", "sass"],
+                    ["JavaScript", "javascript"],
+                    ["Webpack", "webpack"],
+                    ["Bootstrap", "bootstrap"],
+                    ["Docker", "docker"],
+                    ["Mysql", "mysql"],
+                    ["Git", "git"]
+                  ].map(([title, icon]) => (
+                    <li key={icon} className="flex text-gray-500 items-center font-bold"><DevIcon icon={icon} style={devIconStyle} /> {title}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="section_contact" className="flex justify-center items-center py-14">
+        <div className="container grid grid-cols-1 p-8 md:p-0">
+          <div className="mb-5">
+            <h2 className="text-black font-bold text-2xl">Contact</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-black text-lg mb-2 leading-6 text-justify">
+                If you have any questions or comments about my work, please don&apos;t hesitate to reach out to me using the buttons below
+              </p>
+              <p className="text-black text-lg mb-2 leading-6 text-justify">
+                I am always open to new challenges and am happy to answer any questions you may have. I look forward to hearing from you!
+              </p>
+              <div className="my-3 flex gap-2">
+                <Link href="mailto:jorgearaya474@gmail.com">
+                  <a className="px-3 py-2 font-bold text-black rounded-full bg-emerald-300 hover:bg-emerald-400 transition ease-in-out duration-150">
+                    Contact me <Send size={19} className="inline-block" />
+                  </a>
+                </Link>
+                <Link href="https://www.linkedin.com/in/jorge-araya-25088a105">
+                  <a className="flex items-center justify-center px-3 py-2 font-bold text-black rounded-full bg-emerald-300 hover:bg-emerald-400 transition ease-in-out duration-150">
+                    <Linkedin size={19} />
+                  </a>
+                </Link>
+                <Link href="https://www.facebook.com/jorgel.araya.50/">
+                  <a className="flex items-center justify-center px-3 py-2 font-bold text-black rounded-full bg-emerald-300 hover:bg-emerald-400 transition ease-in-out duration-150">
+                    <Facebook size={19} />
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div>
+
+              <Image
+                src="/images/paper-plane.png"
+                alt="Contact me"
+                width={300}
+                height={200}
+                className="rounded-md w-full"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
