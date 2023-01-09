@@ -1,16 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { Smile } from "react-feather";
+import { FC, useEffect, useState } from "react";
 
-export default function Header() {
+const Header: FC = () => {
   const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  // setup mobile menu handler
-  const menuBtnHandler = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const [menuOpen, setMenuOpen] = useState<Boolean>(false);
 
   // close the mobile menu after route change
   useEffect(() => {
@@ -28,13 +22,11 @@ export default function Header() {
             id="header_title"
             className="flex items-center flex-shrink-0 text-white mr-6"
           >
-            <span className="font-black text-xl text-emerald-500 tracking-tight">
-              jorge@site:
-            </span>
+            Jorge Araya
           </div>
           <div className="block lg:hidden">
             <button
-              onClick={menuBtnHandler}
+              onClick={(e) => setMenuOpen(!menuOpen)}
               className="flex items-center px-3 py-2 border rounded text-emerald-500 border-emerald-500 hover:text-amber-500 hover:border-amber-500"
             >
               <svg
@@ -49,15 +41,15 @@ export default function Header() {
           </div>
           <div
             id="menuContainer"
-            className={`w-full ${
-              menuOpen ? "" : "hidden"
-            } lg:block flex-grow lg:flex lg:items-center lg:w-auto mt-4 lg:mt-0 bg-neutral-800 lg:bg-transparent rounded-md py-5 px-3 lg:p-0`}
+            className={`w-full ${menuOpen ? "" : "hidden"
+              } lg:block flex-grow lg:flex lg:items-center lg:w-auto mt-4 lg:mt-0 bg-neutral-800 lg:bg-transparent rounded-md py-5 px-3 lg:p-0`}
           >
-            <ul className="text-sm lg:flex-grow">
+            <ul className="md:flex md:justify-end text-sm lg:flex-grow">
               {[
-                ["/home", "/"],
-                ["/about", "/#section_about"],
-                ["/blog", "/blog"],
+                ["Home", "/"],
+                ["About", "/#section_about"],
+                ["Contact", "/#section_contact"],
+                ["Blog", "/blog"]
               ].map(([title, url]) => (
                 <Link key={title} href={url}>
                   <a
@@ -71,26 +63,19 @@ export default function Header() {
                       lg:mb-0
                       font-bold 
                       text-lg 
-                      text-amber-50 
-                      hover:bg-neutral-800 
-                      hover:text-emerald-500 
-                      ${router.asPath == url ? "text-amber-500" : ""}`}
+                      text-white 
+                      ${router.asPath == url ? "text-emerald-300" : ""}`}
                   >
                     {title}
                   </a>
                 </Link>
               ))}
             </ul>
-            <div>
-              <Link href="mailto:jorgearaya474@gmail.com">
-                <a className="mr-0 ml-auto rounded-full px-3 py-2 font-bold text-lg text-emerald-500 border-2 border-emerald-500 hover:border-amber-500 hover:text-amber-500 transition ease-in-out duration-150">
-                  Say Hello <Smile size={19} className="inline-block inline" />
-                </a>
-              </Link>
-            </div>
           </div>
         </nav>
       </div>
     </header>
   );
 }
+
+export default Header
