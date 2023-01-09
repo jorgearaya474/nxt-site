@@ -1,7 +1,17 @@
 import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
+import { NextPage } from "next";
 import { Calendar, Tag } from "react-feather";
+
+interface BProps {
+  slug: string,
+  frontmatter: {
+    date: string,
+    tag: string,
+  },
+  content: any
+}
 
 export async function getStaticPaths() {
   // Get all posts
@@ -19,7 +29,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({ params: { slug }  } : {params: any, slug: string}) {
   const fileName = fs.readFileSync(`posts/${slug}.mdx`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
 
@@ -43,8 +53,8 @@ export async function getStaticProps({ params: { slug } }) {
     },
   };
 }
-
-export default function postpage({ frontmatter, content, posts, slug }) {
+const Postpage: NextPage<BProps> = (props) => {
+  const {frontmatter, content} = props;
   return (
     <div className="flex justify-center items-center">
       <div className="content">
@@ -74,3 +84,4 @@ export default function postpage({ frontmatter, content, posts, slug }) {
     </div>
   );
 }
+export default Postpage;

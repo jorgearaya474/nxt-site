@@ -3,14 +3,23 @@ import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
 import SidebarArticles from "../components/sidebarArticles";
+import { NextPage } from "next";
 
-/**
- * Blog page
- * Show all posts
- * @param {*} props
- * @returns
- */
-export default function Blog(props) {
+type Post = {
+  slug: string,
+  frontmatter: {
+    title: string,
+    socialImage: string,
+    excerpt: string,
+  }
+}
+
+interface BProps {
+  posts: Array<Post>
+}
+
+const Blog: NextPage<BProps> = (props) => {
+  const {posts} = props
   return (
     <div className="flex justify-center items-center">
       <div className="content">
@@ -26,7 +35,7 @@ export default function Blog(props) {
                 id="posts-list"
                 className="grid grid-cols-1 md:grid-cols-1 gap-4"
               >
-                {props.posts.map(({ slug, frontmatter }) => (
+                {posts.map(({ slug, frontmatter }) => (
                   <div key={slug} className="post-box">
                     <div className="bg-stone-800 grid grid-cols-1 md:grid-cols-6 rounded-xl shadow-lg overflow-hidden flex flex-col">
                       <div className="col-span-2">
@@ -59,7 +68,7 @@ export default function Blog(props) {
               </div>
             </div>
             <div className="col-span-6 md:col-span-2">
-              <SidebarArticles posts={props.posts} />
+              
             </div>
           </div>
         </div>
@@ -67,6 +76,8 @@ export default function Blog(props) {
     </div>
   );
 }
+
+export default Blog;
 
 export async function getStaticProps() {
   const files = fs.readdirSync("posts");
