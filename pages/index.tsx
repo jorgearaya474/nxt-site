@@ -3,6 +3,7 @@ import { Linkedin, GitHub, Send, Facebook } from "react-feather";
 import Image from "next/image";
 import { NextPage } from "next";
 import DevIcon from "devicon-react-svg";
+import Head from 'next/head'
 
 const devIconStyle = {
   fill: "#333",
@@ -12,8 +13,8 @@ const devIconStyle = {
 
 const Home: NextPage = () => {
   return (
+    <>
     <div className="content">
-
       <div id="section_intro" className="flex justify-center items-center">
         <div className="container">
           <div className="grid grid-cols-3 p-4 md:p-0">
@@ -148,6 +149,7 @@ const Home: NextPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 export default Home;
