@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
+import Image from "next/image";
 
 const Header: FC = () => {
   const router = useRouter();
@@ -22,7 +23,14 @@ const Header: FC = () => {
             id="header_title"
             className="flex items-center flex-shrink-0 text-white mr-6"
           >
-            Jorge Araya
+            <Image
+                src="/images/jorge-araya-logo.png"
+                alt="Jorge Araya"
+                width={160}
+                height={19}
+                className=""
+                loading="lazy"
+              />
           </div>
           <div className="block lg:hidden">
             <button
@@ -49,7 +57,7 @@ const Header: FC = () => {
                 ["Home", "/"],
                 ["About", "/#section_about"],
                 ["Contact", "/#section_contact"],
-                ["Blog", "/blog"]
+                //["Blog", "/blog"]
               ].map(([title, url]) => (
                 <Link key={title} href={url}>
                   <a
