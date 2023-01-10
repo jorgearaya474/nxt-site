@@ -3,7 +3,6 @@ import { Linkedin, GitHub, Send, Facebook } from "react-feather";
 import Image from "next/image";
 import { NextPage } from "next";
 import DevIcon from "devicon-react-svg";
-import Head from 'next/head'
 
 const devIconStyle = {
   fill: "#333",
@@ -61,7 +60,7 @@ const Home: NextPage = () => {
       </div>
       <div
         id="section_about" className="flex justify-center items-center bg-gray-100 py-14">
-        <div className="container grid grid-cols-1 p-8 md:p-0">
+        <div className="container grid grid-cols-1 p-4 md:p-0">
           <div className="mb-5">
             <h2 className="text-black font-bold text-2xl">About</h2>
           </div>
@@ -104,7 +103,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div id="section_contact" className="flex justify-center items-center py-14">
-        <div className="container grid grid-cols-1 p-8 md:p-0">
+        <div className="container grid grid-cols-1 p-4 md:p-0">
           <div className="mb-5">
             <h2 className="text-black font-bold text-2xl">Contact</h2>
           </div>
