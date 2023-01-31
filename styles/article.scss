@@ -2,18 +2,28 @@ article.post{
     max-width: 100%;
     
     .content{
-        h1, h2, h3 {
-            color: $post-text;
-        }
+        
 
         h1{
-            font-size: 45px;
+            font-size: 23px;
+        }
+
+        h2, h3, h4, h5{
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+
+        h3{
+            font-size: 18px;
         }
 
         p, a, li, i{
-            color: $post-text !important;
-            line-height: 26px;
-            font-size: 18px;
+            line-height: 20px;
+            font-size: 14px;
         }
 
         p > code{
@@ -41,6 +51,17 @@ article.post{
             td{
                 color: $post-text;
                 padding: 12px;
+            }
+        }
+
+        @media screen and (min-width: 768px){
+            h1{
+                font-size: 45px;
+            }
+
+            p, a, li, i{
+                line-height: 26px;
+                font-size: 18px;
             }
         }
     }

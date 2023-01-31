@@ -23,7 +23,9 @@ const Header: FC = () => {
             id="header_title"
             className="flex items-center flex-shrink-0 text-white mr-6"
           >
-            <Image
+            <Link href={"/"}>
+              <a>
+              <Image
                 src="/images/jorge-araya-logo.png"
                 alt="Jorge Araya"
                 width={160}
@@ -31,6 +33,8 @@ const Header: FC = () => {
                 className=""
                 loading="lazy"
               />
+              </a>
+            </Link>
           </div>
           <div className="block lg:hidden">
             <button
@@ -57,7 +61,7 @@ const Header: FC = () => {
                 ["Home", "/"],
                 ["About", "/#section_about"],
                 ["Contact", "/#section_contact"],
-                //["Blog", "/blog"]
+                ["Blog", "/blog"]
               ].map(([title, url]) => (
                 <Link key={title} href={url}>
                   <a

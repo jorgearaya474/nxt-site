@@ -6,7 +6,7 @@ import DevIcon from "devicon-react-svg";
 
 const devIconStyle = {
   fill: "#333",
-  width: "40px",
+  width: "60px",
   marginRight: "5px"
 };
 
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
                     ["Bootstrap", "bootstrap"],
                     ["Docker", "docker"],
                     ["Mysql", "mysql"],
-                    ["Git", "git"]
+                    ["Git", "git"],
                   ].map(([title, icon]) => (
                     <li key={icon} className="flex text-gray-500 items-center font-bold"><DevIcon icon={icon} style={devIconStyle} /> {title}</li>
                   ))}
