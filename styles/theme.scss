@@ -7,8 +7,8 @@ body{
     
 
     #nxt_site{
-        #section_intro{
-            height: 700px;
+        #section_intro, #blog_template{
+            min-height: 700px;
         }
     }
 }
