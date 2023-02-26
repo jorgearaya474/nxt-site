@@ -25,7 +25,7 @@ const Home: NextPage = () => {
                 Jorge Araya
               </h1>
               <p className="mb-2 text-lg md:text-2xl text-black text-left">
-                I&apos;m a full-stack developer from Costa Rica 🇨🇷 with 7 years experience, passionate about tech and design.
+                I&apos;m a full-stack developer from Costa Rica with 7 years experience, passionate about tech and design.
               </p>
               <div className="my-3 flex gap-2">
                 <Link href="mailto:jorgearaya474@gmail.com">
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                     Get in touch <Send size={19} className="inline-block" />
                   </a>
                 </Link>
-                <Link href="https://www.linkedin.com/in/jorge-araya-25088a105">
+                <Link href="https://www.linkedin.com/in/jorgearayadev">
                   <a className="flex items-center justify-center px-3 py-2 font-bold text-black rounded-full bg-emerald-300 hover:bg-emerald-400 transition ease-in-out duration-150">
                     <Linkedin size={19} />
                   </a>
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
                     Contact me <Send size={19} className="inline-block" />
                   </a>
                 </Link>
-                <Link href="https://www.linkedin.com/in/jorge-araya-25088a105">
+                <Link href="https://www.linkedin.com/in/jorgearayadev">
                   <a className="flex items-center justify-center px-3 py-2 font-bold text-black rounded-full bg-emerald-300 hover:bg-emerald-400 transition ease-in-out duration-150">
                     <Linkedin size={19} />
                   </a>
