@@ -61,7 +61,7 @@ const Header: FC = () => {
                 ["Home", "/"],
                 ["About", "/#section_about"],
                 ["Contact", "/#section_contact"],
-                ["Blog", "/blog"]
+                //["Blog", "/blog"]
               ].map(([title, url]) => (
                 <Link key={title} href={url}>
                   <a
