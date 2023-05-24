@@ -5,7 +5,7 @@ import { NextPage } from "next";
 import { Calendar, Tag } from "react-feather";
 import Sidebar from "../../components/Sidebar";
 import Head from 'next/head'
-import { Post } from "../blog";
+import { Post } from ".";
 
 interface Article extends Post {
   content: any,

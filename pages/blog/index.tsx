@@ -2,9 +2,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 import { NextPage } from "next";
-import trimWords from "../lib/utils/TrimWords";
+import trimWords from "../../lib/utils/TrimWords";
 import Head from 'next/head'
 
 export interface Post {
