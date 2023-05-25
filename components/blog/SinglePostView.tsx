@@ -1,10 +1,8 @@
 import React from 'react';
 import md from 'markdown-it';
-import { NextPage } from 'next';
-import { Calendar, Tag } from 'react-feather';
+import { Calendar } from 'react-feather';
 import Head from 'next/head'
 import { SinglePost } from '../../interfaces';
-import Link from 'next/link';
 
 const SinglePostView: React.FC<SinglePost> = ({ title, excerpt, date, content }) => {
   return (
