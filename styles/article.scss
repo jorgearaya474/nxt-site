@@ -1,68 +1,68 @@
-article.post{
-    max-width: 100%;
-    
-    .content{
-        
+article.post {
+  max-width: 100%;
 
-        h1{
-            font-size: 23px;
-        }
-
-        h2, h3, h4, h5{
-            margin-top: 14px;
-            margin-bottom: 14px;
-        }
-
-        h2{
-            font-size: 20px;
-        }
-
-        h3{
-            font-size: 18px;
-        }
-
-        p, a, li, i{
-            line-height: 20px;
-            font-size: 14px;
-        }
-
-        p > code{
-            background: #4d4d4d;
-            color: #46dbad;
-            border-radius: 3px;
-            padding: 2px 4px;
-
-            &:before, &:after{
-                display: none;
-            }
-        }
-
-        table{
-            background-color: #1e293b;
-            font-size: 18px;
-            
-            thead {
-                th{
-                    color: $post-text;
-                    padding: 12px;
-                }
-            }
-
-            td{
-                color: $post-text;
-                padding: 12px;
-            }
-        }
-
-        @media screen and (min-width: 768px){
-            h1{
-                font-size: 45px;
-            }
-
-            p, a, li, i{
-                line-height: 26px;
-                font-size: 18px;
-            }
-        }
+  .content {
+    h1 {
+      font-size: 28px;
     }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p,
+    a,
+    li,
+    i {
+      line-height: 30px;
+      font-size: 20px;
+    }
+
+    p > code {
+      background: #4d4d4d;
+      color: #46dbad;
+      border-radius: 3px;
+      padding: 2px 4px;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
+    table {
+      background-color: #1e293b;
+      font-size: 18px;
+
+      thead {
+        th {
+          color: $post-text;
+          padding: 12px;
+        }
+      }
+
+      td {
+        color: $post-text;
+        padding: 12px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      h1 {
+        font-size: 45px;
+      }
+    }
+  }
 }

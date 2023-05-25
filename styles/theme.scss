@@ -1,14 +1,15 @@
-html{
-    scroll-behavior: smooth;
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
-body{
-    background-color: $bg-color;
-    font-family: 'Raleway', sans-serif;
-    
+body {
+  background-color: $white;
+  font-family: 'Poppins', sans-serif;
 
-    #nxt_site{
-        #section_intro, #blog_template{
-            min-height: 700px;
-        }
+  #nxt_site {
+    .home-section,
+    #blog_template {
+      min-height: 500px;
     }
+  }
 }
