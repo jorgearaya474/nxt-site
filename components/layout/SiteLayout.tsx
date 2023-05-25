@@ -13,7 +13,7 @@ const SiteLayout: React.FC<Props> = (props) => {
         <>
             <SiteHead />
             <MainHeader />
-            <main className="">{props.children}</main>
+            <main>{props.children}</main>
             <Footer />
         </>
     );

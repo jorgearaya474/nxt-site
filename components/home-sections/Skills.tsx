@@ -1,25 +1,25 @@
 import React from 'react';
-import Image from "next/image";
+import Image from 'next/image';
 
 const imageStyle = {
   marginRight: '.8rem',
 };
 
 const skills_arr = [
-  ["React", "react"],
-  ["PHP", "php"],
-  ["Python", "python"],
-  ["Flask", "flask"],
-  ["NextJs", "nextjs"],
-  ["WordPress", "wordpress"],
-  ["Sass", "sass"],
-  ["TypeScript", "typescript"],
-  ["Bootstrap", "bootstrap"],
-  ["Figma", "figma"],
-  ["JavaScript", "javascript"],
-  ["TailWind", "tailwind"],
-  ["Mysql", "mysql"],
-  ["Git", "git"],
+  ['React', 'react'],
+  ['PHP', 'php'],
+  ['Python', 'python'],
+  ['Flask', 'flask'],
+  ['NextJs', 'nextjs'],
+  ['WordPress', 'wordpress'],
+  ['Sass', 'sass'],
+  ['TypeScript', 'typescript'],
+  ['Bootstrap', 'bootstrap'],
+  ['Figma', 'figma'],
+  ['JavaScript', 'javascript'],
+  ['TailWind', 'tailwind'],
+  ['Mysql', 'mysql'],
+  ['Git', 'git'],
 ];
 
 const Skills: React.FC = () => {
@@ -35,7 +35,7 @@ const Skills: React.FC = () => {
               width={30}
               height={30}
               style={imageStyle}
-              loading="lazy" />
+              loading='lazy' />
             {title}
           </li>
         ))}
