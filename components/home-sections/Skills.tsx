@@ -17,7 +17,7 @@ const skills_arr = [
   ['Bootstrap', 'bootstrap'],
   ['Figma', 'figma'],
   ['JavaScript', 'javascript'],
-  ['TailWind', 'tailwind'],
+  ['Tailwind', 'tailwind'],
   ['Mysql', 'mysql'],
   ['Git', 'git'],
 ];
@@ -26,9 +26,9 @@ const Skills: React.FC = () => {
   return (
     <div>
       <h3 className='text-black font-bold text-xl mb-2'>My Skills</h3>
-      <ul role='list' className='md:columns-3 space-y-4 text-slate-400 mt-4'>
+      <ul role='list' className='columns-2 md:columns-3 space-y-4 text-slate-400 mt-4'>
         {skills_arr.map(([title, icon]) => (
-          <li key={icon} className='flex text-black items-center bg-gray-100 p-3'>
+          <li key={icon} className='flex text-black text-lg items-center bg-gray-100 p-3'>
             <Image
               src={`/icons/${icon}.svg`}
               alt={title}

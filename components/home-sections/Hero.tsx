@@ -13,8 +13,7 @@ const Hero: React.FC = () => {
               <span className='md:block text-3xl'>Hello, I&apos;m</span> Jorge Araya
             </h1>
             <p className='text-black text-xl mb-3 leading-8 text-left mb-4'>
-              I&apos;m a creative web developer from Costa Rica, specialized in <b>JavaScript</b>, <b>React</b> and <b>Wordpress</b>.
-              Passionated about design and technology, I&apos;m dedicated to creating innovative and engaging web applications.
+              I&apos;m a creative web developer from Costa Rica, specializing in <b>JavaScript</b>, <b>React</b>, and <b>WordPress</b>. Passionate about design and technology, I&apos;m dedicated to creating innovative and engaging web applications.
             </p>
 
             <div className='my-3 flex gap-2'>

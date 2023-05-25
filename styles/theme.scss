@@ -1,9 +1,10 @@
 html {
-  scroll-behavior: smooth;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 body {
   background-color: $white;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 
   #nxt_site {
     .home-section,
