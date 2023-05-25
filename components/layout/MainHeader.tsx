@@ -36,7 +36,7 @@ const MainHeader: React.FC = () => {
               ['Contact', '/#section_contact'],
               ['Blog', '/blog']
             ].map(([title, url]) => (
-              <Link key={title} href={url} className='md:inline-block py-2 mb-3 lg:mb-0 font-bold text-lg text-black'>
+              <Link key={title} href={url} className='md:inline-block py-2 font-bold text-lg text-black'>
                 {title}
               </Link>
             ))}
