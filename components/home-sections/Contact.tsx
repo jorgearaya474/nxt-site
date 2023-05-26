@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
             />
           </div>
           <div className='col-span-3 md:col-span-2'>
-            <p className='ttext-black text-xl mb-3 leading-8 text-justify'>
+            <p className='ttext-black text-xl mb-3 leading-8 items-start text-justify'>
               If you have any inquiries or feedback regarding my work, feel free to contact me using the buttons below.
               I am enthusiastic about taking on new challenges and I will gladly address any questions you may have. I am excitedly awaiting your message!
             </p>
