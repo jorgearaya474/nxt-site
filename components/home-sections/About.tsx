@@ -20,7 +20,7 @@ const About: React.FC = () => {
               Outside of the digital world, I am an avid nature lover and traveler. Exploring the beauty of the outdoors and embarking on adventures is one of my greatest joys.
             </p>
             <p className='text-black text-xl mb-2 leading-8 text-justify'>
-              In addition to my love for nature, I&apos;m a true coffee lover, who appreciates the art of brewing a perfect cup of coffee and savoring its rich flavors.
+              In addition to my love for nature, I&apos;m a true coffee lover, who appreciates the art of brewing a perfect cup of coffee.
             </p>
           </div>
           <div>
