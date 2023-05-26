@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
           <h2 className='text-black font-bold text-2xl'>Contact</h2>
         </div>
         <div className='grid md:grid-cols-3 gap-12'>
-          <div className='col-span-3 md:col-span-1 flex justify-center'>
+          <div className='col-span-3 md:col-span-1 flex items-start justify-center'>
             <Image
               src='/images/contact-chat.svg'
               alt='Contact me'
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
             />
           </div>
           <div className='col-span-3 md:col-span-2'>
-            <p className='ttext-black text-xl mb-3 leading-8 items-start text-justify'>
+            <p className='ttext-black text-xl mb-3 leading-8 text-justify'>
               If you have any inquiries or feedback regarding my work, feel free to contact me using the buttons below.
               I am enthusiastic about taking on new challenges and I will gladly address any questions you may have. I am excitedly awaiting your message!
             </p>
