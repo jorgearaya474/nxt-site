@@ -1,13 +1,25 @@
 import fs from "fs";
 import matter from "gray-matter";
-import md from "markdown-it";
 import { NextPage } from "next";
-import { Calendar, Tag } from "react-feather";
-import Head from 'next/head'
-import { Post, SinglePost } from "../../interfaces";
+import { SinglePost } from "../../interfaces";
 import SinglePostView from "../../components/blog/SinglePostView";
 import { GetStaticPathsResult, GetStaticPropsContext } from "next";
 
+const Postpage: NextPage<SinglePost> = (props) => {
+  const { slug, title, image, excerpt, date, content } = props;
+  return (
+    <SinglePostView
+      slug={slug}
+      title={title}
+      image={image}
+      excerpt={excerpt}
+      date={date}
+      content={content}
+    />
+  );
+}
+
+export default Postpage;
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const files: string[] = fs.readdirSync("posts");
@@ -39,19 +51,3 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     },
   };
 }
-
-const Postpage: NextPage<SinglePost> = (props) => {
-  const { slug, title, image, excerpt, date, content } = props;
-  return (
-    <SinglePostView
-      slug={slug}
-      title={title}
-      image={image}
-      excerpt={excerpt}
-      date={date}
-      content={content}
-    />
-  );
-}
-
-export default Postpage;

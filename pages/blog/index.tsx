@@ -5,6 +5,22 @@ import matter from 'gray-matter';
 import PostsList from '../../components/blog/PostsList';
 import { Post, BlogPosts } from '../../interfaces';
 
+const Blog: NextPage<BlogPosts> = (props) => {
+  return (
+    <div className='content flex justify-center items-center pt-20 lg:pt-28'>
+      <Head>
+        <title>Blog | jorgearaya.dev</title>
+      </Head>
+      <div className='container'>
+        <h1 className='text-black font-bold text-2xl mb-6'>Latest Articles</h1>
+        <PostsList posts={props.posts} />
+      </div>
+    </div>
+  );
+}
+
+export default Blog;
+
 export async function getStaticProps() {
   const files = fs.readdirSync('posts');
 
@@ -27,19 +43,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-const Blog: NextPage<BlogPosts> = (props) => {
-  return (
-    <div className='content flex justify-center items-center mt-10'>
-      <Head>
-        <title>Blog | jorgearaya.dev</title>
-      </Head>
-      <div className='container'>
-        <h1 className='text-black font-bold text-2xl mb-6'>Latest Articles</h1>
-        <PostsList posts={props.posts} />
-      </div>
-    </div>
-  );
-}
-
-export default Blog;
