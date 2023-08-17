@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
               alt='Picture of the author'
               width={400}
               height={400}
-              className='max-w-xs lg:max-w-full relative z-10'
+              className='max-w-[240px] lg:max-w-full relative z-10'
               loading='lazy'
             />
             <div className='absolute bg-amber-500 w-full h-full top-4 lg:top-8 left-4 lg:left-8 z-1'></div>
