@@ -6,7 +6,7 @@ import { Post } from '../../interfaces';
 
 const PostListItem: React.FC<Post> = ({ slug, title, image, excerpt }) => {
   return (
-    <div key={slug} className='post-box mb-8'>
+    <div key={slug} className='post-box mb-8 fadeInUp-animation'>
       <div className='bg-white grid grid-cols-1 md:grid-cols-2 shadow-lg hover:shadow-xl transition-all duration-300'>
         <div>
           <Link href={`/blog/${slug}`}>

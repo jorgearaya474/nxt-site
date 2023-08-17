@@ -6,7 +6,7 @@ import { SinglePost } from '../../interfaces';
 
 const SinglePostView: React.FC<SinglePost> = ({ title, excerpt, date, content }) => {
   return (
-    <div className='content py-8'>
+    <div className='content pt-20 lg:pt-28'>
       <Head>
         <title>{title} | jorgearaya.dev</title>
         <meta name='description' content={excerpt} />
