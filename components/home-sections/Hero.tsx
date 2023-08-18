@@ -5,7 +5,7 @@ import { Linkedin, GitHub } from 'react-feather';
 
 const Hero: React.FC = () => {
   return (
-    <section id='section_hero' className='home-section flex justify-center items-center bg-gradient-to-r from-blue-950 to-sky-900 overflow-hidden lg:h-screen relative'>
+    <section id='section_hero' className='grid-background flex justify-center items-center  bg-gradient-to-r from-blue-950 to-sky-900 overflow-hidden lg:h-screen relative'>
       <div className='container'>
         <div className="grid max-w-screen-xl py-20 mx-auto gap-8 lg:py-24 lg:grid-cols-12">
           <div className='order-2 lg:order-2 mr-auto place-self-center lg:col-span-7 fadeInUp-animation z-1 relative'>
@@ -17,13 +17,13 @@ const Hero: React.FC = () => {
               I&apos;m a creative developer from Costa Rica, specializing in <b>JavaScript</b>, <b>React</b>, and <b>WordPress</b>. Passionate about design and technology, I&apos;m dedicated to creating innovative and engaging web applications.
             </p>
             <div className='my-3 flex gap-2'>
-              <Link href='mailto:jorgearaya474@gmail.com' className='px-3 py-2 font-bold text-blue-950 bg-amber-500 hover:bg-orange-500 transition ease-in-out duration-150'>
+              <Link href='mailto:jorgearaya474@gmail.com' className='px-3 py-2 font-bold text-blue-950 bg-amber-500 hover:bg-orange-500 transition ease-in-out duration-150' title='Contact Jorge'>
                 Contact me
               </Link>
-              <Link href='https://www.linkedin.com/in/jorgearayadev' className='flex items-center justify-center px-3 py-2 font-bold text-blue-950 bg-amber-500 hover:bg-orange-500 transition ease-in-out duration-150'>
+              <Link href='https://www.linkedin.com/in/jorgearayadev' target='_blank' className='flex items-center justify-center px-3 py-2 font-bold text-blue-950 bg-amber-500 hover:bg-orange-500 transition ease-in-out duration-150' title='Jorge Araya LinkedIn'>
                 <Linkedin size={19} />
               </Link>
-              <Link href='https://github.com/jorgearaya474' className='flex items-center justify-center px-3 py-2 font-bold text-blue-950 bg-amber-500 hover:bg-orange-500 transition ease-in-out duration-150'>
+              <Link href='https://github.com/jorgearaya474' target='_blank' className='flex items-center justify-center px-3 py-2 font-bold text-blue-950 bg-amber-500 hover:bg-orange-500 transition ease-in-out duration-150' title='Jorge Araya Github'>
                 <GitHub size={19} />
               </Link>
             </div>

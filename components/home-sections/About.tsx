@@ -3,7 +3,7 @@ import Skills from './Skills';
 
 const About: React.FC = () => {
   return (
-    <div id='section_about' className='home-section flex justify-center items-center bg-white py-7 lg:py-24'>
+    <section id='section_about' className='home-section flex justify-center items-center bg-white py-7 lg:py-24'>
       <div className='container'>
         <div className='mb-5'>
           <h2 className='text-black font-bold text-3xl'>About me</h2>
@@ -30,7 +30,7 @@ const About: React.FC = () => {
         <div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

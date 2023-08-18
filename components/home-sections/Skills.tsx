@@ -1,10 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-const imageStyle = {
-  marginRight: '.8rem',
-};
-
 const skills_arr = [
   ['React', 'react'],
   ['PHP', 'php'],
@@ -34,7 +30,7 @@ const Skills: React.FC = () => {
               alt={title}
               width={30}
               height={30}
-              style={imageStyle}
+              className='mr-2'
               loading='lazy' />
             {title}
           </li>
