@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Script from 'next/script';
 import Head from 'next/head';
 
 const SiteHead: React.FC = () => {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Jorge Araya - Home | jorgearaya.dev</title>
         <meta name='description' content='Are you in need of a skilled and reliable web developer? Jorge Araya is a talented professional with years of experience in building and maintaining websites. From custom designs to complex functionality, Jorge has the expertise to bring your vision to life. Contact him today to discuss your project and see how he can help your business succeed online.' />
@@ -21,7 +21,7 @@ const SiteHead: React.FC = () => {
           });
         `}
       </Script>
-    </>
+    </Fragment>
   );
 }
 

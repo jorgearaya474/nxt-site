@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import type { ReactNode } from 'react';
 import SiteHead from './SiteHead';
 import MainHeader from './MainHeader';
@@ -10,12 +10,12 @@ interface Props {
 
 const SiteLayout: React.FC<Props> = (props) => {
     return (
-        <>
+        <Fragment>
             <SiteHead />
             <MainHeader />
             <main>{props.children}</main>
             <Footer />
-        </>
+        </Fragment>
     );
 }
 

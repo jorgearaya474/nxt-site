@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+
+const RoutesList = [
+  ['Home', '/'],
+  ['About', '/#section_about'],
+  ['My Work', '/my-work'],
+  ['Contact', '#section_contact'],
+  ['Blog', '/blog']
+]
 
 const MainHeader: React.FC = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const navRouter = useRouter();
+  const isHome = navRouter.pathname === '/';
 
+  /**
+   * Mobile menu toggle
+   */
   const handleMenuToggle = () => {
     setIsMenuOpen((prevState) => !prevState);
   }
 
+  /**
+   * Close menu handler
+   */
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
   return (
-    <header id='site-header' className='fixed w-full top-0 z-50 transition-all duration-300 shadow-lg bg-white'>
+    <header id='site-header' className={`${isHome ? 'fixed' : 'sticky'} w-full top-0 z-50 transition-all duration-300 shadow-lg bg-white`}>
       <div className='container mx-auto flex-1 py-2 lg:py-6'>
         <nav className='flex items-center justify-between flex-wrap'>
           <div className="w-full flex flex-wrap items-center justify-between mx-auto">
@@ -38,13 +53,7 @@ const MainHeader: React.FC = () => {
             <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`}
               id='navbar-default'>
               <ul className='font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0'>
-                {[
-                  ['Home', '/'],
-                  ['About', '/#section_about'],
-                  //['My Work', '/work'],
-                  ['Contact', '/#section_contact'],
-                  ['Blog', '/blog']
-                ].map(([title, url]) => (
+                {RoutesList.map(([title, url]) => (
                   <Link key={title} href={url} className='md:inline-block py-4 lg:py-2 font-bold text-lg text-center text-black' onClick={closeMenu}>
                     {title}
                   </Link>
