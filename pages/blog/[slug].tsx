@@ -1,21 +1,40 @@
 import fs from "fs";
+import md from 'markdown-it';
 import matter from "gray-matter";
 import { NextPage } from "next";
-import { SinglePost } from "../../interfaces";
-import SinglePostView from "../../components/blog/SinglePostView";
+import Head from 'next/head';
+import MiniHero from '../../components/layout/MiniHero';
 import { GetStaticPathsResult, GetStaticPropsContext } from "next";
+import { SinglePost } from "../../interfaces";
+import { Calendar } from 'react-feather';
 
 const Postpage: NextPage<SinglePost> = (props) => {
-  const { slug, title, image, excerpt, date, content } = props;
+  const { title, excerpt, date, content } = props;
+
   return (
-    <SinglePostView
-      slug={slug}
-      title={title}
-      image={image}
-      excerpt={excerpt}
-      date={date}
-      content={content}
-    />
+    <div className='content'>
+      <Head>
+        <title>{title} | jorgearaya.dev</title>
+        <meta name='description' content={excerpt} />
+      </Head>
+      <MiniHero title={title} />
+      <div className='single-post flex justify-center items-center py-10'>
+        <div className='container'>
+          <article className='post prose'>
+            <div className='meta-data text-slate-400'>
+              <span className='mr-3'>
+                <Calendar className='inline-flex mb-1 mr-2' size='18' />
+                {date}
+              </span>
+            </div>
+            <div
+              className='content'
+              dangerouslySetInnerHTML={{ __html: md().render(content) }}
+            />
+          </article>
+        </div>
+      </div>
+    </div>
   );
 }
 
