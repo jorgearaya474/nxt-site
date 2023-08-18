@@ -20,7 +20,7 @@ const PostListItem: React.FC<Post> = ({ slug, title, image, excerpt }) => {
         </div>
         <div className='p-6'>
           <Link href={`/blog/${slug}`}>
-            <h2 className='text-black text-xl font-bold mb-2 hover:text-orange-500 transition duration-300 ease-in-out'>
+            <h2 className='text-black text-xl font-bold mb-2 hover:text-amber-500 transition duration-300 ease-in-out'>
               {title}
             </h2>
           </Link>
