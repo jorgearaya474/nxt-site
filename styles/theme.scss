@@ -29,7 +29,7 @@ body {
   animation: 1.5s fadeInUp;
 }
 
-#section_hero {
+.grid-background {
   &::before {
     content: '';
     position: absolute;
