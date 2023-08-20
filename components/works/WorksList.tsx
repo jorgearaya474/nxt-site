@@ -4,7 +4,7 @@ import { Projects } from '../../interfaces';
 
 const WorksList: React.FC<Projects> = ({ projects }) => {
   return (
-    <div className='col-span-6 md:col-span-4'>
+    <div data-testid='projects-list' className='col-span-6 md:col-span-4'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {projects.map((project) => (
           <WorkItem

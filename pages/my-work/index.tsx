@@ -7,7 +7,7 @@ import MiniHero from '../../components/layout/MiniHero';
 import WorksList from '../../components/works/WorksList';
 import Contact from '../../components/home-sections/Contact';
 
-const Blog: NextPage<Projects> = (props) => {
+const Works: NextPage<Projects> = (props) => {
   return (
     <div className='content'>
       <Head>
@@ -25,7 +25,7 @@ const Blog: NextPage<Projects> = (props) => {
   );
 }
 
-export default Blog;
+export default Works;
 
 export async function getStaticProps() {
   const files = fs.readdirSync('projects');
