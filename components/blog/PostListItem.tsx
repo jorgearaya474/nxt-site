@@ -24,7 +24,7 @@ const PostListItem: React.FC<Post> = ({ slug, title, image, excerpt }) => {
               {title}
             </h2>
           </Link>
-          <p className='text-black'>{`${trimWords(excerpt, 25)}...`}</p>
+          <p className='text-black'>{`${trimWords(excerpt, 22)}...`}</p>
           <Link href={`/blog/${slug}`} className='block w-fit mt-4 px-3 py-2 font-bold text-white bg-black hover:bg-orange-500 transition ease-in-out duration-150' title={title}>Read More</Link>
         </div>
       </div>
