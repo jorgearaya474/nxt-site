@@ -7,7 +7,7 @@ const RoutesList = [
   ['Home', '/'],
   ['About', '/#section_about'],
   ['My Work', '/my-work'],
-  ['Contact', '#section_contact'],
+  ['Contact', '/#section_contact'],
   ['Blog', '/blog']
 ]
 

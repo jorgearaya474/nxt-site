@@ -1,0 +1,95 @@
+---
+title: 'Setting Up a Next.js Project with TypeScript'
+image: images/next-and-ts.jpg
+date: '19/08/2023'
+excerpt: 'Learn how to set up your Next.js project with TypeScript. From project creation to TypeScript integration, this guide covers every step. Elevate your development experience with this essential setup guide!'
+---
+
+![Test Post Image](/images/next-and-ts.jpg)
+
+As a web developer, you’re likely familiar with the power of combining Next.js and TypeScript. Next.js offers server-side rendering (SSR), static site generation (SSG) and an excellent development experience over all, TypeScript in the other hand provides strong type checking and improves code maintainability. In this guide we’ll walk though the process of setting up a Next.js project with TypeScript.
+
+## Step 1: Create a Next.js Project
+
+To get started, let's create a new Next.js project. Open your terminal and enter the following command:
+
+`npx create-next-app@12 my-app`
+
+Replace _my-app_ with your preferred project name.
+
+## Step 2: Add TypeScript Dependencies
+
+Navigate to your project directory using the terminal:
+
+`cd my-app`
+
+Then, install TypeScript and the necessary type declarations:
+
+`npm install --save-dev typescript @types/react @types/node`
+
+## Step 3: Configure TypeScript
+
+Create a _tsconfig.json_ file in your project's root directory. This file will configure TypeScript for your Next.js project:
+
+```
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "incremental": true,
+    "types": ["node", "react"]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+```
+
+## Step 4: Rename Files to .tsx Extension
+
+Rename your _.js_ files within the pages directory to use the _.tsx_ extension. For example, if you have an _index.js_ file in the pages directory, rename it to _index.tsx_.
+
+## Step 5: Start the Development Server
+
+With everything set up, you can now start the Next.js development server:
+
+`npm run dev`
+
+Congratulations 🥳 At this point your Next.js project is now running with TypeScript!
+
+## Step 6: Utilize TypeScript in Pages and Components
+
+As you build your Next.js pages and components, make the most of TypeScript's type checking capabilities. Define TypeScript types and interfaces to specify prop types and other data structures.
+
+## Optional: TypeScript ESLint Configuration
+
+If you're using ESLint, integrate TypeScript linting into your project. Install relevant packages and configure your _.eslintrc_ file as needed.
+
+```
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+  ],
+
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
+  rules: {
+    // Your custom rules here
+  },
+};
+```
