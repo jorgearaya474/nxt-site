@@ -36,14 +36,7 @@ const MainHeader: React.FC = () => {
         <nav className='flex items-center justify-between flex-wrap'>
           <div className="w-full flex flex-wrap items-center justify-between mx-auto">
             <Link href='/' className='flex items-center'>
-              <Image
-                src='/images/jorge-araya-logo-black.png'
-                alt='Jorge Araya Logo'
-                width={167}
-                height={20}
-                className=''
-                loading='lazy'
-              />
+              <span className='font-bold text-xl uppercase'>Jorge Araya</span>
             </Link>
             <button type="button" className='inline-flex items-center p-2 w-10 h-10 justify-center text-md md:hidden text-black' onClick={handleMenuToggle}>
               <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -54,7 +47,7 @@ const MainHeader: React.FC = () => {
               id='navbar-default'>
               <ul className='font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0'>
                 {RoutesList.map(([title, url]) => (
-                  <Link key={title} href={url} className='md:inline-block py-4 lg:py-2 font-bold text-lg text-center text-black' onClick={closeMenu}>
+                  <Link key={title} href={url} className='md:inline-block py-4 lg:py-2 font-medium uppercase text-md text-center text-black' onClick={closeMenu}>
                     {title}
                   </Link>
                 ))}
