@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { Linkedin } from 'react-feather';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
+import {
+  FadeUpVariantsContainer,
+  FadeUpVariantsItem,
+} from '../../lib/utils/animations';
 
 const Contact: React.FC = () => {
+  const contactSection = useRef(null);
+  const isVisible = useInView(contactSection, { once: true });
+
   return (
-    <section id='section_contact' className='home-section flex justify-center items-center bg-slate-100 py-7 lg:py-24'>
+    <section id='section_contact' className='home-section flex justify-center items-center bg-slate-100 py-7 lg:py-24' ref={contactSection}>
       <div className='container'>
         <div className='mb-5'>
           <h2 className='text-black font-bold text-3xl'>Contact</h2>
         </div>
-        <div className='grid md:grid-cols-3 gap-12'>
-          <div className='col-span-3 md:col-span-1 flex items-start justify-center'>
+        <motion.div className='grid md:grid-cols-3 gap-12' variants={FadeUpVariantsContainer} initial='hidden' animate={isVisible ? 'visible' : ''}>
+          <motion.div className='col-span-3 md:col-span-1 flex items-start justify-center' variants={FadeUpVariantsItem}>
             <Image
               src='/images/contact-chat.svg'
               alt='Contact me'
@@ -20,8 +28,8 @@ const Contact: React.FC = () => {
               className='md:w-full'
               loading='lazy'
             />
-          </div>
-          <div className='col-span-3 md:col-span-2'>
+          </motion.div>
+          <motion.div className='col-span-3 md:col-span-2' variants={FadeUpVariantsItem}>
             <p className='ttext-black text-lg mb-3 leading-8 text-justify'>
               If you&apos;re interested in collaborating or have questions about my work, feel free to get in touch using the buttons below. I thrive on embracing fresh opportunities and I&apos;m ready to address any inquiries you might have. <b>Your next project could be our exciting journey together</b>, and I&apos;m eagerly looking forward to your message!
             </p>
@@ -33,8 +41,8 @@ const Contact: React.FC = () => {
                 <Linkedin size={19} />
               </Link>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

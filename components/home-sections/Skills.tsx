@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
+import {
+  FadeUpVariantsContainer,
+  FadeUpVariantsItem,
+} from '../../lib/utils/animations';
 
 const skills_arr = [
   ['React', 'react'],
@@ -19,12 +24,15 @@ const skills_arr = [
 ];
 
 const Skills: React.FC = () => {
+  const skillsList = useRef(null)
+  const isInView = useInView(skillsList, { once: true })
+
   return (
     <div>
       <h3 className='text-black font-bold text-2xl mb-2'>My Tech Stack</h3>
-      <ul role='list' className='columns-2 md:columns-3 space-y-4 text-slate-400 mt-4'>
+      <motion.ul role='list' className='columns-2 md:columns-3 space-y-4 text-slate-400 mt-4' ref={skillsList} variants={FadeUpVariantsContainer} initial="hidden" animate={isInView ? 'visible' : ''}>
         {skills_arr.map(([title, icon]) => (
-          <li key={icon} className='flex text-black text-lg items-center bg-gray-100 p-3 hover:bg-gray-200'>
+          <motion.li key={icon} className='flex text-black text-lg items-center bg-gray-100 p-3 hover:bg-gray-200' variants={FadeUpVariantsItem}>
             <Image
               src={`/icons/${icon}.svg`}
               alt={title}
@@ -33,9 +41,9 @@ const Skills: React.FC = () => {
               className='mr-2'
               loading='lazy' />
             {title}
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 }
