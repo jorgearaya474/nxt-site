@@ -29,6 +29,18 @@ body {
 }
 
 .grid-background {
+  background-color: #26004d;
+  background-image: radial-gradient(
+      at 33% 5%,
+      hsla(224, 93%, 53%, 1) 0,
+      hsla(224, 93%, 53%, 0) 50%
+    ),
+    radial-gradient(
+      at 66% 21%,
+      hsla(229, 85%, 59%, 1) 0,
+      hsla(229, 85%, 59%, 0) 50%
+    );
+
   &::before {
     content: '';
     position: absolute;
