@@ -1,3 +1,5 @@
+import { SVGProps } from 'react'
+
 export interface Post {
     slug: string,
     title: string,
@@ -25,4 +27,9 @@ export interface Project {
 
 export interface Projects {
     projects: Project[]
+}
+
+export interface HamburgerProps {
+    isOpen: boolean;
+    toggle: () => void;
 }
