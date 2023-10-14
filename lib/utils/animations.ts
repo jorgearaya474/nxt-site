@@ -52,3 +52,43 @@ export const FadeUpVariantsItem = {
     },
   },
 };
+
+export const menuWraperVariants = {
+  open: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1,
+    }
+  },
+  closed: {
+    opacity: 0,
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: -1,
+    }
+  },
+};
+
+export const menuItemVariants = {
+  open: {
+    opacity: 1,
+    x: 0,
+  },
+  closed: {
+    opacity: 0,
+    x: 30,
+  },
+  hover: {
+    scale: 1.1
+  },
+  tap: {
+    scale: 0.9
+  },
+  transition: {
+    duration: 1,
+    type: 'spring',
+    stiffness: 400,
+    damping: 17
+  },
+};
