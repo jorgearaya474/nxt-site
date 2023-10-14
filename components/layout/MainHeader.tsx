@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Hamburguer from '../ui/Hamburguer';
 import {
   menuWraperVariants,
@@ -64,11 +65,18 @@ const MainHeader: React.FC = () => {
           <div className='w-full flex flex-wrap items-center justify-between mx-auto'>
             <motion.a
               href='/'
-              className='flex items-center'
+              className='flex items-center focus:outline-none'
               whileHover={menuItemVariants.hover}
               whileTap={menuItemVariants.tap}
             >
-              <p className='font-bold text-2xl uppercase'>Jorge Araya</p>
+              <Image
+                src='/images/jorge-araya-logo-black.png'
+                alt='Jorge Araya Logo'
+                width={167}
+                height={20}
+                className=''
+                loading='lazy'
+              />
             </motion.a>
             <Hamburguer isOpen={isMenuOpen} toggle={handleMenuToggle} />
 
@@ -87,7 +95,7 @@ const MainHeader: React.FC = () => {
                   <motion.a
                     key={title}
                     href={url}
-                    className='md:inline-block py-4 lg:py-2 uppercase text-md text-center text-black'
+                    className='md:inline-block py-4 lg:py-2 text-md text-center text-black'
                     onClick={closeMenu}
                     whileHover={menuItemVariants.hover}
                     whileTap={menuItemVariants.tap}
