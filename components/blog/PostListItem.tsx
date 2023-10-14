@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { FadeUpVariantsItem } from '../../lib/utils/animations';
 import trimWords from '../../lib/utils/TrimWords';
 import { Post } from '../../interfaces';
 
 const PostListItem: React.FC<Post> = ({ slug, title, image, excerpt }) => {
   return (
-    <div key={slug} className='post-box mb-8 fadeInUp-animation'>
+    <motion.div key={slug} className='post-box mb-8' variants={FadeUpVariantsItem}>
       <div className='bg-white grid grid-cols-1 md:grid-cols-2 shadow-lg hover:shadow-xl transition-all duration-300'>
         <div>
           <Link href={`/blog/${slug}`}>
@@ -28,7 +30,7 @@ const PostListItem: React.FC<Post> = ({ slug, title, image, excerpt }) => {
           <Link href={`/blog/${slug}`} className='block w-fit mt-4 px-3 py-2 font-bold text-white bg-black hover:bg-orange-500 transition ease-in-out duration-150' title={title}>Read More</Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

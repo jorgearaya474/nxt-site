@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import Hamburguer from '../ui/Hamburguer';
+import {
+  menuWraperVariants,
+  menuItemVariants,
+} from '../../lib/utils/animations';
 
 const RoutesList = [
   ['Home', '/'],
@@ -19,11 +21,10 @@ const MainHeader: React.FC = () => {
   const navRouter = useRouter();
   const isHome = navRouter.pathname === '/';
 
-
   useEffect(() => {
     const checkWindow = () => {
       setIsMobile(window.innerWidth < 768);
-    }
+    };
 
     // Initial check
     checkWindow();
@@ -34,7 +35,7 @@ const MainHeader: React.FC = () => {
     // Clean up on unmount
     return () => {
       window.removeEventListener('resize', checkWindow);
-    }
+    };
   }, []);
 
   /**
@@ -51,43 +52,12 @@ const MainHeader: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const menuWraperVariants = {
-    open: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: 1,
-      }
-    },
-    closed: {
-      opacity: 0,
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: -1,
-      }
-    },
-  }
-
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      x: 0,
-    },
-    closed: {
-      opacity: 0,
-      x: 30,
-    },
-    transition: {
-      duration: 1,
-      type: 'spring',
-    },
-  }
-
   return (
     <header
       id='site-header'
-      className={`${isHome ? 'fixed' : 'sticky'
-        } w-full top-0 z-50 transition-all duration-300 shadow-lg bg-white`}
+      className={`${
+        isHome ? 'fixed' : 'sticky'
+      } w-full top-0 z-50 transition-all duration-300 shadow-lg bg-white`}
     >
       <div className='container mx-auto flex-1 py-4 lg:py-6'>
         <nav className='flex items-center justify-between flex-wrap'>
@@ -95,9 +65,8 @@ const MainHeader: React.FC = () => {
             <motion.a
               href='/'
               className='flex items-center'
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              whileHover={menuItemVariants.hover}
+              whileTap={menuItemVariants.tap}
             >
               <p className='font-bold text-2xl uppercase'>Jorge Araya</p>
             </motion.a>
@@ -110,13 +79,18 @@ const MainHeader: React.FC = () => {
               initial='closed'
               animate={isMobile && !isMenuOpen ? 'closed' : 'open'}
             >
-              <motion.ul variants={itemVariants} className='font-bold flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0'>
+              <motion.ul
+                variants={menuItemVariants}
+                className='font-bold flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0'
+              >
                 {RoutesList.map(([title, url]) => (
                   <motion.a
                     key={title}
                     href={url}
                     className='md:inline-block py-4 lg:py-2 uppercase text-md text-center text-black'
                     onClick={closeMenu}
+                    whileHover={menuItemVariants.hover}
+                    whileTap={menuItemVariants.tap}
                   >
                     {title}
                   </motion.a>
