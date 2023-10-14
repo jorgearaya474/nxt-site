@@ -1,12 +1,17 @@
-import fs from "fs";
+import fs from 'fs';
 import md from 'markdown-it';
-import matter from "gray-matter";
-import { NextPage } from "next";
+import matter from 'gray-matter';
+import { NextPage } from 'next';
+import { motion } from 'framer-motion';
 import Head from 'next/head';
 import MiniHero from '../../components/layout/MiniHero';
-import { GetStaticPathsResult, GetStaticPropsContext } from "next";
-import { SinglePost } from "../../interfaces";
+import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
+import { SinglePost } from '../../interfaces';
 import { Calendar } from 'react-feather';
+import {
+  FadeUpVariantsContainer,
+  FadeUpVariantsItem,
+} from '../../lib/utils/animations';
 
 const Postpage: NextPage<SinglePost> = (props) => {
   const { title, excerpt, date, content } = props;
@@ -19,7 +24,12 @@ const Postpage: NextPage<SinglePost> = (props) => {
       </Head>
       <MiniHero title={title} />
       <div className='single-post flex justify-center items-center py-10'>
-        <div className='container'>
+        <motion.div
+          className='container'
+          variants={FadeUpVariantsContainer}
+          initial='hidden'
+          animate='visible'
+        >
           <article className='post prose'>
             <div className='meta-data text-slate-400'>
               <span className='mr-3'>
@@ -32,19 +42,19 @@ const Postpage: NextPage<SinglePost> = (props) => {
               dangerouslySetInnerHTML={{ __html: md().render(content) }}
             />
           </article>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
-}
+};
 
 export default Postpage;
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const files: string[] = fs.readdirSync("posts");
+  const files: string[] = fs.readdirSync('posts');
   const paths = files.map((fileName) => ({
     params: {
-      slug: fileName.replace(".mdx", ""),
+      slug: fileName.replace('.mdx', ''),
     },
   }));
 
@@ -54,10 +64,12 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   };
 }
 
-export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>): Promise<{ props: SinglePost }> {
+export async function getStaticProps({
+  params,
+}: GetStaticPropsContext<{ slug: string }>): Promise<{ props: SinglePost }> {
   const { slug } = params!;
   const filePath = `${process.cwd()}/posts/${slug}.mdx`;
-  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { data: frontmatter, content } = matter(fileContent);
   return {
     props: {
