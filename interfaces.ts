@@ -1,4 +1,3 @@
-import { SVGProps } from 'react'
 
 export interface Post {
     slug: string,
@@ -6,6 +5,7 @@ export interface Post {
     image: string,
     excerpt: string,
     date: string,
+    isFeatured: boolean,
 }
 
 export interface BlogPosts {

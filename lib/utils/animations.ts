@@ -56,6 +56,7 @@ export const FadeUpVariantsItem = {
 export const menuWraperVariants = {
   open: {
     opacity: 1,
+    x: 0,
     transition: {
       staggerChildren: 0.2,
       staggerDirection: 1,
@@ -63,6 +64,7 @@ export const menuWraperVariants = {
   },
   closed: {
     opacity: 0,
+    x: '100%',
     transition: {
       staggerChildren: 0.2,
       staggerDirection: -1,
