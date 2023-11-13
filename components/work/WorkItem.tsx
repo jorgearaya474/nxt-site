@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Link2 } from 'react-feather';
-import { Project } from '../../types';
+import { Project } from '../../interfaces';
 import { FadeUpVariantsItem } from '../../lib/utils/animations';
 
 const WorkItem: React.FC<Project> = ({

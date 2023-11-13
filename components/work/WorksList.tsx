@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import WorkItem from './WorkItem';
-import { Projects } from '../../types';
+import { Projects } from '../../interfaces';
 import { FadeUpVariantsContainer } from '../../lib/utils/animations';
 
 const WorksList: React.FC<Projects> = ({ projects }) => {

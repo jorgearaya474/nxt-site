@@ -3,7 +3,7 @@ import Head from 'next/head';
 import fs from 'fs';
 import matter from 'gray-matter';
 import PostsList from '../../components/blog/PostsList';
-import { Post, BlogPosts } from '../../types';
+import { Post, BlogPosts } from '../../interfaces';
 import MiniHero from '../../components/layout/MiniHero';
 import Contact from '../../components/home-sections/Contact';
 

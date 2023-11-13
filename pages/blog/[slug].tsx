@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import MiniHero from '../../components/layout/MiniHero';
 import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
-import { SinglePost } from '../../types';
+import { SinglePost } from '../../interfaces';
 import { Calendar } from 'react-feather';
 import {
   FadeUpVariantsContainer,

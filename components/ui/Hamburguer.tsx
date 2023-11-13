@@ -1,5 +1,5 @@
 import React from 'react';
-import { HamburgerProps } from '../../types';
+import { HamburgerProps } from '../../interfaces';
 
 const Hamburger: React.FC<HamburgerProps> = ({ isOpen, toggle }) => {
   return (

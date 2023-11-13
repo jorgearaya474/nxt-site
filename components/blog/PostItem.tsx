@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FadeUpVariantsItem } from '../../lib/utils/animations';
-import { Post } from '../../types';
+import { Post } from '../../interfaces';
 import trimWords from '../../lib/utils/TrimWords';
 
 const PostItem: React.FC<Post> = ({ slug, title, image, excerpt }) => {

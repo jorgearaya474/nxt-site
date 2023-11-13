@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FadeUpVariantsContainer } from '../../lib/utils/animations';
 import PostItem from './PostItem';
-import { BlogPosts } from '../../types';
+import { BlogPosts } from '../../interfaces';
 
 const PostsList: React.FC<BlogPosts> = ({ posts }) => {
   return (

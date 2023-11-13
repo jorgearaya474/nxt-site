@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import fs from 'fs';
 import matter from 'gray-matter';
-import { Project, Projects } from '../../types';
+import { Project, Projects } from '../../interfaces';
 import MiniHero from '../../components/layout/MiniHero';
 import WorksList from '../../components/work/WorksList';
 import Contact from '../../components/home-sections/Contact';
