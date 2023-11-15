@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
               initial='hidden'
               animate='visible'
             >
-              Full Stack Web Developer
+              Web Developer
             </motion.h2>
             <motion.p
               className='text-white text-lg mb-3 leading-8 text-left mb-4'

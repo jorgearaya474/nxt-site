@@ -14,7 +14,7 @@ const About: React.FC = () => {
         <div className='grid gap-2 md:gap-12 grid-cols-1'>
           <div>
             <p className='text-black text-lg mb-3 leading-8 text-justify'>
-              I am a web developer with a passion for creating intuitive and
+              I am a web developer with a passion for crafting intuitive and
               engaging websites. With over seven years of experience in the
               industry, I have had the opportunity to work on a variety of
               projects. This diverse experience has allowed me to develop a
@@ -24,8 +24,8 @@ const About: React.FC = () => {
             <p className='text-black text-lg mb-3 leading-8 text-justify'>
               I enjoy being up to date with the latest technologies and trends,
               expanding my knowledge. I&apos;m always eager to take on new
-              challenges and excited to see where my career as a developer takes
-              me.
+              challenges and am excited to see where my career as a developer
+              takes me.
             </p>
             <p className='text-black text-lg mb-3 leading-8 text-justify'>
               Outside of the digital world, I am an avid nature lover and
@@ -33,8 +33,8 @@ const About: React.FC = () => {
               adventures is one of my greatest joys.
             </p>
             <p className='text-black text-lg mb-2 leading-8 text-justify'>
-              In addition to my love for nature, I&apos;m a true coffee lover,
-              who appreciates the art of brewing a perfect cup of coffee.
+              Beyond my love for nature, I am a coffee enthusiast who savors the
+              art of crafting the perfect cup.
             </p>
           </div>
           <div>
