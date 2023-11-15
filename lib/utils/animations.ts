@@ -81,12 +81,6 @@ export const menuItemVariants = {
     opacity: 0,
     x: 30,
   },
-  hover: {
-    scale: 1.1
-  },
-  tap: {
-    scale: 0.9
-  },
   transition: {
     duration: 1,
     type: 'spring',
