@@ -1,22 +1,22 @@
 import React, { Fragment } from 'react';
 import type { ReactNode } from 'react';
 import SiteHead from './SiteHead';
-import MainHeader from './MainHeader';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
 interface Props {
-    children: ReactNode
+  children: ReactNode;
 }
 
 const SiteLayout: React.FC<Props> = (props) => {
-    return (
-        <Fragment>
-            <SiteHead />
-            <MainHeader />
-            <main>{props.children}</main>
-            <Footer />
-        </Fragment>
-    );
-}
+  return (
+    <Fragment>
+      <SiteHead />
+      <Navbar />
+      <main>{props.children}</main>
+      <Footer />
+    </Fragment>
+  );
+};
 
 export default SiteLayout;

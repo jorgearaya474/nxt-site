@@ -11,12 +11,12 @@ import {
 const RoutesList = [
   ['Home', '/'],
   ['About', '/#section_about'],
-  ['My Work', '/my-work'],
+  ['Works', '/works'],
   ['Contact', '/#section_contact'],
   ['Blog', '/blog'],
 ];
 
-const MainHeader: React.FC = () => {
+const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const navRouter = useRouter();
@@ -97,8 +97,6 @@ const MainHeader: React.FC = () => {
                     href={url}
                     className='md:inline-block py-4 lg:py-2 text-md text-center text-black'
                     onClick={closeMenu}
-                    whileHover={menuItemVariants.hover}
-                    whileTap={menuItemVariants.tap}
                   >
                     {title}
                   </motion.a>
@@ -112,4 +110,4 @@ const MainHeader: React.FC = () => {
   );
 };
 
-export default MainHeader;
+export default Navbar;
