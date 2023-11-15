@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Works from '../../pages/my-work';
+import Works from '../../pages/works';
 
 const mockProps = {
   projects: [
@@ -10,8 +10,8 @@ const mockProps = {
       image: '../../public/images/projects/rubik-site.jpg',
       link: 'https://test.link',
       description: 'Test project description',
-      technologies: 'PHP, WordPress, JavaScript, CSS'
-    }
+      technologies: 'PHP, WordPress, JavaScript, CSS',
+    },
   ],
 };
 

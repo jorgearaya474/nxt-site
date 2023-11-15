@@ -22,6 +22,7 @@ const PostsList: React.FC<BlogPosts> = ({ posts }) => {
             excerpt={post.excerpt}
             date={post.date}
             isFeatured={post.isFeatured}
+            content={post.content}
           />
         ))}
       </motion.div>
