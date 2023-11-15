@@ -6,14 +6,11 @@ export interface Post {
     excerpt: string,
     date: string,
     isFeatured: boolean,
+    content: any
 }
 
 export interface BlogPosts {
     posts: Post[]
-}
-
-export interface SinglePost extends Post {
-    content: any
 }
 
 export interface Project {

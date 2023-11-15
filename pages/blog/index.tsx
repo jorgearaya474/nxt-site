@@ -6,6 +6,7 @@ import PostsList from '../../components/blog/PostsList';
 import { Post, BlogPosts } from '../../interfaces';
 import MiniHero from '../../components/layout/MiniHero';
 import Contact from '../../components/home-sections/Contact';
+import { getAllPosts } from '../../lib/posts-util';
 
 const pathName = 'content/posts';
 
@@ -36,22 +37,8 @@ const Blog: NextPage<BlogPosts> = (props) => {
 
 export default Blog;
 
-export async function getStaticProps() {
-  const files = fs.readdirSync(pathName);
-
-  const posts: Post[] = files.map((fileName) => {
-    const slug = fileName.replace('.mdx', '');
-    const readFile = fs.readFileSync(`${pathName}/${fileName}`, 'utf-8');
-    const { data: frontmatter } = matter(readFile);
-    return {
-      slug,
-      title: frontmatter.title as string,
-      image: frontmatter.image as string,
-      excerpt: frontmatter.excerpt as string,
-      date: frontmatter.date as string,
-      isFeatured: frontmatter.isFeatured as boolean,
-    };
-  });
+export function getStaticProps() {
+  const posts = getAllPosts();
 
   return {
     props: {
