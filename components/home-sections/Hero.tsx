@@ -85,11 +85,11 @@ const Hero: React.FC = () => {
           </motion.div>
           <div className='order-1 lg:order-2 lg:col-span-5 mb-10 lg-mb-0 mx-auto relative'>
             <motion.img
-              src='/images/jorge-araya-dev-profile-picture.jpeg'
+              src='/images/jorge-araya-profile-picture-wp.png'
               alt='Picture of the author'
               width={400}
               height={400}
-              className='max-w-[240px] lg:max-w-full relative z-10'
+              className='max-w-[240px] lg:max-w-full relative z-10 shadow-[0_23px_32px_2px_rgba(0,0,0,0.5)]'
               loading='lazy'
               variants={heroImageVariants}
               initial='hidden'
