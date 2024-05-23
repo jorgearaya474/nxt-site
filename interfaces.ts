@@ -19,7 +19,6 @@ export interface Project {
     image: string,
     link: string,
     technologies: string,
-    description: string
 }
 
 export interface Projects {
