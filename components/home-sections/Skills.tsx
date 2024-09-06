@@ -21,6 +21,7 @@ const skills_arr = [
   ['Tailwind', 'tailwind'],
   ['Mysql', 'mysql'],
   ['Git', 'git'],
+  ['Laravel', 'laravel'],
 ];
 
 const Skills: React.FC = () => {
@@ -30,7 +31,7 @@ const Skills: React.FC = () => {
   return (
     <div>
       <h3 className='text-black font-bold text-2xl mb-2'>My Tech Stack</h3>
-      <motion.ul role='list' className='columns-2 md:columns-3 space-y-4 text-slate-400 mt-4' ref={skillsList} variants={FadeUpVariantsContainer} initial="hidden" animate={isInView ? 'visible' : ''}>
+      <motion.ul role='list' className='columns-1 md:columns-3 space-y-4 text-slate-400 mt-4' ref={skillsList} variants={FadeUpVariantsContainer} initial="hidden" animate={isInView ? 'visible' : ''}>
         {skills_arr.map(([title, icon]) => (
           <motion.li key={icon} className='flex text-black text-lg items-center bg-gray-100 p-3 hover:bg-gray-200' variants={FadeUpVariantsItem}>
             <Image
