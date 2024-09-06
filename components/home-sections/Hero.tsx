@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id='section_hero'
-      className='grid-background flex justify-center items-center overflow-hidden h-auto sm:h-screen xl:max-h-[75vh] relative'
+      className='grid-background flex justify-center items-center overflow-hidden h-auto sm:h-screen relative'
     >
       <div className='container'>
         <div className='grid max-w-screen-xl py-20 mx-auto gap-8 lg:pt-40 lg:pb-26 lg:grid-cols-12'>
