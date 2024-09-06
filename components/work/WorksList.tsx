@@ -21,7 +21,6 @@ const WorksList: React.FC<Projects> = ({ projects }) => {
             image={project.image}
             link={project.link}
             technologies={project.technologies}
-            description={project.description}
           />
         ))}
       </motion.div>

@@ -16,7 +16,6 @@ export function getProjectData(fileName: string): Project {
     slug: projectSlug,
     title: data.title,
     image: data.image,
-    description: data.description,
     link: data.link,
     technologies: data.technologies,
   }
